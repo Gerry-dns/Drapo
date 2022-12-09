@@ -6,18 +6,24 @@ const Fail = ({navigation}) => {
     
       <View>
         <View style={styles.bannerContainer}>
-          <Text style={styles.fail}>Dommage !</Text>
+          <Text style={styles.dommageText}>Dommage !</Text>
         </View> 
-        <View style={styles.failContainer}>
+        <View>
           <Image
             style={styles.PictureFail}
             source={require('../assets/fail.gif')}
           />
         </View>
-        <View>
-        <TouchableOpacity style={styles.retryContainer} onPress={()=>navigation.navigate("Quizz")}>
-            <Text style={styles.textRetry}>Nouvelle essaie</Text>
+        <View style={styles.bouttonsFail}>
+        <TouchableOpacity style={styles.nouvelleEssaiBoutton}   onPress={()=>navigation.navigate("Quizz")}>
+            <Text style={styles.textNouvelleEssai}>Nouvel essaie</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.abandonBoutton}  onPress={()=>navigation.navigate("Home")}>
+            <Text style={styles.textAbandon}>J'abandonne</Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+       
         </View>
       </View>
     
@@ -28,32 +34,57 @@ const Fail = ({navigation}) => {
 export default Fail
 
 const styles = StyleSheet.create({
-  banner: {
-    height: 300,
-    width: 300,
-  },
 
   bannerContainer: {
-    marginTop: 20,
+    marginTop: 0,
     alignItems: 'center',
   },
-
-  fail: {
+  dommageText: {
     fontSize: 50,
   },
   PictureFail: {
     width: '100%',
     height: '80%',
   }, 
+  bouttonsFail: {
+    flex:1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignContent: 'center',
+  },
 
-  retryContainer: {
+  nouvelleEssaiBoutton: {
     alignItems: 'center',
     backgroundColor: '#34A0A4',
-    width: '100%',
+    width: '45%',
     borderRadius: 100,
   },
 
-  textRetry: {
-    fontSize: 30,
-  }
+  nouvelleEssaiBoutton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#34A0A4',
+    width: '45%',
+    borderRadius: 100,
+  },
+
+  textNouvelleEssai: {
+    fontSize: 20,
+    color: 'white',
+    
+  },
+
+  abandonBoutton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#34A0A4',
+    width: '40%',
+    borderRadius: 100,
+
+  },
+
+  textAbandon: {
+    fontSize: 20,
+    color: 'white'
+  },
 })

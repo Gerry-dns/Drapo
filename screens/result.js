@@ -3,10 +3,9 @@ import React from 'react'
 
 const Result = ({navigation}) => {
   return (
-    
       <View>
         <View style={styles.bannerContainer}>
-          <Text style={styles.bravo}>Bravo</Text>
+          <Text style={styles.bravoText}>Bravo</Text>
         </View> 
         <View>
           <Image
@@ -15,23 +14,17 @@ const Result = ({navigation}) => {
           />
         </View>
         <View>
-        <TouchableOpacity onPress={()=>navigation.navigate("Quizz")}>
-            <Text>Nouvelle essaie</Text>
+          <TouchableOpacity style={styles.encoreBoutton} onPress={()=>navigation.navigate("Quizz")}>
+              <Text style={styles.encoreText}>Encore !</Text>
           </TouchableOpacity>
         </View>
       </View>
-    
-
   )
 }
 
 export default Result
 
 const styles = StyleSheet.create({
-  banner: {
-    height: 300,
-    width: 300,
-  },
 
   bannerContainer: {
     marginTop: 20,
@@ -39,17 +32,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  bravo: {
+  bravoText: {
     fontSize: 50,
   },
   PictureBravo: {
     width: '100%',
-    height: '80%',
-
+    height: '70%',
+    marginTop: 20,
   }, 
-  container: {
-    paddingTop: 40, 
-    paddingHorizontal: 20,
-    height: '100%',
+  encoreBoutton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 40,
+    
+  },
+
+  encoreText: {
+    color: 'white',
+    backgroundColor: 'green',
+    borderRadius : 100, 
+    width: '100%'
   }
 })
