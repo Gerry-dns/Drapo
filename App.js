@@ -1,6 +1,6 @@
 
 
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Image } from 'react-native';
 import Quizz from './screens/Quizz';
 import Home from './screens/home';
 import Result from './screens/result';
@@ -9,21 +9,12 @@ import { NavigationContainer } from '@react-navigation/native';
 
 
 const App = () => {
-//Liason de l'api
-const [data, setData] = useState([]);
-
-useEffect(()=> {
-  axios.get("https://restcountries.com/v3.1/all").then((res)=>
-      setData(res.data)
-  ).catch( (res)=>
-      console.log("error")
-  )
-},[])
 return (
 
       <NavigationContainer>
-      <MyStack/>
+        <MyStack/>
       </NavigationContainer>
+    
     
   );
 };

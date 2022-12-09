@@ -8,11 +8,10 @@ const Home = ({navigation}) => {
         <View style={styles.container}>
             <Title/>
             <View style={styles.bannerContainer}>
-                <Image source={{uri: 'https://img.freepik.com/vecteurs-libre/icone-drapeau-insigne-realiste-sertie-differentes-couleurs-drapeaux-illustration-badges-plastique_1284-29323.jpg?w=1380&t=st=1670505958~exp=1670506558~hmac=36790f8de15df3f180a9e8284816229a472df664a5c473ef61babf34bb6610d8'}}
-                style={styles.banner}
-                resizeMode="contain"/>
-                
-                
+            <Image
+        style={styles.logo}
+        source={require('../assets/logo.png')}
+      />
             </View>
             <TouchableOpacity 
                 onPress={()=> navigation.navigate("Quizz")} 
@@ -37,10 +36,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
     },
+    logo: {
+        width: '100%',
+        height: '70%',
+        borderRadius: 100,
+    },
     container: {
         paddingTop: 40,
         paddingHorizontal: 20,
         height: '100%',
+        backgroundColor : '#ece9df',
     },
     button:{
         width: '100%',
